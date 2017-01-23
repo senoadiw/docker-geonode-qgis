@@ -1,0 +1,9 @@
+*.pyc
+*.log
+*.pid
+celerybeat-schedule.*
+src/*
+docker_geonode/static_root/*
+docker_geonode/uploaded/*
+docker_geonode/qgis_layer/*
+docker_geonode/qgis_tiles/*
