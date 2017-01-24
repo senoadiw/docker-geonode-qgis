@@ -4,7 +4,9 @@ docker_geonode
 Trying out docker-geonode-qgis
 -------------------------------
 
-Should work on default machine @ http://192.168.99.100
+GeoNode 2.5.5 and QGIS Server 2.14.
+
+Should work on default machine @ http://192.168.99.100. Edit SITEURL in docker-compose.yml if necessary.
 
 1. git clone https://github.com/senoadiw/docker-geonode-qgis.git
 2. cd docker-geonode-qgis
