@@ -4,7 +4,7 @@ docker_geonode
 Trying out docker-geonode-qgis
 -------------------------------
 
-GeoNode 2.5.5 and QGIS Server 2.14.
+GeoNode 2.5.10 and QGIS Server 2.14.
 
 Make sure the default machine is accessible at http://geonode. Edit the /etc/hosts file if necessary.
 
@@ -17,7 +17,7 @@ Make sure the default machine is accessible at http://geonode. Edit the /etc/hos
     * python manage.py loaddata sample_admin
     * python manage.py loaddata initial_data
     * exit
-8. access GeoNode at http://geonode/
+8. access GeoNode at http://geonode/ (login using admin admin)
 9. done!
 
 Images used
