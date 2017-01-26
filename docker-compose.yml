@@ -16,13 +16,9 @@ services:
       - postgres
       - elasticsearch
       - rabbitmq
-    environment:
-      - DATABASE_URL=postgres://postgres:postgres@postgres:5432/postgres
-      - BROKER_URL=amqp://guest:guest@rabbitmq:5672/
-      - DJANGO_SETTINGS_MODULE=docker_geonode.settings
-      - SITEURL=http://192.168.99.100/
-      - QGIS_SERVER_URL=http://qgisserver/
-      - ALLOWED_HOSTS=['*',]
+    command: python manage.py runserver 0.0.0.0:8000 --settings=docker_geonode.settings
+    env_file:
+      - ./scripts/docker/env/production/django.env
 
   celery:
     build: .
@@ -31,13 +27,8 @@ services:
       - postgres
       - elasticsearch
     command: celery worker --app=docker_geonode.celery_app:app -B -l INFO
-    environment:
-      - DATABASE_URL=postgres://postgres:postgres@postgres:5432/postgres
-      - BROKER_URL=amqp://guest:guest@rabbitmq:5672/
-      - DJANGO_SETTINGS_MODULE=docker_geonode.settings
-      - QGIS_SERVER_URL=http://qgisserver/
-      - ALLOWED_HOSTS=['django',]
-      - C_FORCE_ROOT=1
+    env_file:
+      - ./scripts/docker/env/production/django.env
 
   qgisserver:
     image: senoadiw/qgis-server
@@ -49,8 +40,8 @@ services:
     #links:
     #  - db:db
 
-  nginx:
-    image: terranodo/nginx
+  geonode:
+    image: geonode/nginx
     links:
       - django
     ports:

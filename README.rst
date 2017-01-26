@@ -6,7 +6,7 @@ Trying out docker-geonode-qgis
 
 GeoNode 2.5.5 and QGIS Server 2.14.
 
-Should work on default machine @ http://192.168.99.100. Edit SITEURL in docker-compose.yml if necessary.
+Make sure the default machine is accessible at http://geonode. Edit the /etc/hosts file if necessary.
 
 1. git clone https://github.com/senoadiw/docker-geonode-qgis.git
 2. cd docker-geonode-qgis
@@ -14,11 +14,10 @@ Should work on default machine @ http://192.168.99.100. Edit SITEURL in docker-c
 4. docker-compose ps
 5. docker exec -it dockergeonodeqgis_django_1 bash
     * python manage.py migrate account --noinput && python manage.py migrate layers --noinput && python manage.py migrate --noinput && python manage.py collectstatic --noinput
-    * python manage.py createsuperuser
+    * python manage.py loaddata sample_admin
+    * python manage.py loaddata initial_data
     * exit
-6. docker-compose stop
-7. docker-compose up -d
-8. access GeoNode @ http://192.168.99.100/
+8. access GeoNode at http://geonode/
 9. done!
 
 Images used
