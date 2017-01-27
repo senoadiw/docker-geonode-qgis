@@ -107,8 +107,8 @@ LEAFLET_CONFIG = {
 # Legacy from Geoserver
 OGC_SERVER = {
     'default': {
-        'LOGIN_ENDPOINT': 'account_login',
-        'LOGOUT_ENDPOINT': 'account_logout', ### Fixes LOGOUT_ENDPOINT key error on logout
+        'LOGIN_ENDPOINT': '',
+        'LOGOUT_ENDPOINT': '',
         'LOCATION': SITEURL + 'qgis-server/',
         'PUBLIC_LOCATION': SITEURL + 'qgis-server/',
         'LOG_FILE': '/tmp/qgis-server.log'
