@@ -1,2 +1,2 @@
-geonode_qgis_server==0.1.1
+geonode_qgis_server
 geonode==2.5.10
