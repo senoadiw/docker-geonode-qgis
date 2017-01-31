@@ -63,7 +63,7 @@ CATALOGUE = {
 }
 
 # Leaflet config
-LAYER_PREVIEW_LIBRARY = 'leaflet'
+LAYER_PREVIEW_LIBRARY = 'react'
 LEAFLET_CONFIG = {
     'TILES': [
         # Find tiles at:
